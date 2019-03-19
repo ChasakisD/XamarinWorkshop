@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamarinWorkshop.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#4B6382">
+    <StackLayout VerticalOptions="Center">
+        <StackLayout
+            Margin="16"
+            HorizontalOptions="Center"
+            Orientation="Horizontal"
+            Spacing="0">
+            <Image
+                HeightRequest="64"
+                Source="ic_rocket.png"
+                WidthRequest="64" />
+
+            <Label
+                FontSize="24"
+                HorizontalTextAlignment="Center"
+                Text="Welcome to Xamarin Workshop!"
+                TextColor="#FAAD12"
+                VerticalTextAlignment="Center" />
+        </StackLayout>
+
+        <Frame
+            Margin="16"
+            BackgroundColor="WhiteSmoke"
+            CornerRadius="20"
+            VerticalOptions="Center">
+            <StackLayout Spacing="0" VerticalOptions="Center">
+                <Label
+                    Margin="{x:OnPlatform Android='4,0', iOS='4'}"
+                    Text="Enter Your Username:"
+                    TextColor="Black" />
+
+                <Entry
+                    Placeholder="Enter your username here"
+                    PlaceholderColor="Black"
+                    TextColor="Black" />
+
+                <Label
+                    Margin="{x:OnPlatform Android='4,16,4,0', iOS='4,16,4,4'}"
+                    Text="Enter Your Password:"
+                    TextColor="Black" />
+
+                <Entry
+                    IsPassword="True"
+                    Placeholder="Enter your password here"
+                    PlaceholderColor="Black"
+                    TextColor="Black" />
+
+                <Button
+                    x:Name="LoginButton"
+                    Margin="{x:OnPlatform Android='8', iOS='8,16'}"
+                    BackgroundColor="#2697BE"
+                    Clicked="LoginButtonClicked"
+                    CornerRadius="20"
+                    HeightRequest="40"
+                    Text="Login Me!"
+                    TextColor="White" />
+
+                <Label
+                    x:Name="ClickedCountLabel"
+                    FontSize="Large"
+                    HorizontalTextAlignment="Center"
+                    TextColor="Black" />
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>
