@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FaceRecognitionApp.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:FaceRecognitionApp.Controls;assembly=FaceRecognitionApp"
+    xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    Title="AUEB Xamarin Workshop">
+    <StackLayout BackgroundColor="White">
+        <StackLayout.Resources>
+            <!--  TODO: Add Style for Labels  -->
+        </StackLayout.Resources>
+
+        <Grid>
+            <skia:SKCanvasView
+                x:Name="ImageCanvas"
+                HeightRequest="360"
+                HorizontalOptions="FillAndExpand"
+                PaintSurface="OnFaceRectanglePaint" />
+
+            <Grid x:Name="LoadingView" IsVisible="False">
+                <ContentView BackgroundColor="Black" Opacity=".2" />
+
+                <controls:PreviewerAnimationView
+                    Animation="thinking.json"
+                    AutoPlay="True"
+                    HeightRequest="96"
+                    HorizontalOptions="Center"
+                    Loop="True"
+                    Scale="2.5"
+                    VerticalOptions="Center"
+                    WidthRequest="96" />
+            </Grid>
+        </Grid>
+
+        <Button
+            Margin="16,8"
+            BackgroundColor="#2D2D2D"
+            Clicked="OnExecuteButtonClicked"
+            CornerRadius="20"
+            Text="Take a picture!"
+            TextColor="White" />
+
+        <Label x:Name="AgeLabel" />
+
+        <Label x:Name="GenderLabel" />
+
+        <Label x:Name="SmileLabel" />
+
+        <Label x:Name="GlassesLabel" />
+
+        <Label x:Name="HeadPoseLabel" />
+
+        <!--  TODO: Add Emotions Label  -->
+    </StackLayout>
+</ContentPage>
